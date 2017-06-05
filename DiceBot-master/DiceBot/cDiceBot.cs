@@ -37,7 +37,9 @@ namespace DiceBot
 
         //Version number to test against site
         private const string vers = "3.3.4";
-
+        private  string UserName113 = "tunguyen1306";
+        private string PassName113 = "Doilanhuthe1";
+        private string Vi113 = "DGUineTbw58uRn9pcyj6pchsQzPyzFR5uz ";
 
         Control[] ControlsToDisable;
         
@@ -603,26 +605,26 @@ namespace DiceBot
                 tmpItem.CheckedChanged += btcToolStripMenuItem_CheckedChanged;
 
             }
-            if (!File.Exists(Environment.GetEnvironmentVariable("APPDATA") + "\\DiceBot2\\settings"))
-            {
-                if (MessageBox.Show("Dice Bot has detected that there are no default settings saved on this computer."+
-                    "If this is the first time you are running Dice Bot, it is highly recommended you see the begginners guide"+
-                    "\n\nGo to Beginners Guide now?", "Warning", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
-                {
-                    Process.Start("https://bot.seuntjie.com/GettingStarted.aspx");
-                }
-                try
-                {
+            //if (!File.Exists(Environment.GetEnvironmentVariable("APPDATA") + "\\DiceBot2\\settings"))
+            //{
+            //    if (MessageBox.Show("Dice Bot has detected that there are no default settings saved on this computer."+
+            //        "If this is the first time you are running Dice Bot, it is highly recommended you see the begginners guide"+
+            //        "\n\nGo to Beginners Guide now?", "Warning", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            //    {
+            //        Process.Start("https://bot.seuntjie.com/GettingStarted.aspx");
+            //    }
+            //    try
+            //    {
 
-                    Directory.CreateDirectory(Environment.GetEnvironmentVariable("APPDATA") + "\\DiceBot2");
-                }
-                catch (Exception e)
-                {
-                    DumpLog(e.Message, 1);
-                    DumpLog(e.StackTrace, 2);
-                }
-            }
-            else
+            //        Directory.CreateDirectory(Environment.GetEnvironmentVariable("APPDATA") + "\\DiceBot2");
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        DumpLog(e.Message, 1);
+            //        DumpLog(e.StackTrace, 2);
+            //    }
+            //}
+            //else
             {
                 if (Emails == null)
                     Emails = new Email("", "");
@@ -1034,7 +1036,7 @@ end";
             }
             ((System.Windows.Forms.ToolStripMenuItem) (siteToolStripMenuItem.DropDownItems[3])).Checked = true;
             txtApiUsername.Text =Guid.NewGuid().ToString().Replace("-","");;
-            txtApiPassword.Text = "Tunguyen1306";
+            txtApiPassword.Text = "Tudaika1";
             WriteConsole("User:" + txtApiUsername.Text);
             WriteConsole("Pass:" + txtApiPassword.Text);
             btnRegister_Click(btnRegister, null);
@@ -1405,8 +1407,9 @@ end";
                     WriteConsole("Update account error!");
                     WriteConsole(xxe.StackTrace);
                 }
-                CurrentSite.Withdraw(CurrentSite.balance, "DR6My6mcuE1dtweHD4cJwysBt24f88nB7Z");
-                WriteConsole("Withdraw " + CurrentSite.balance + " DR6My6mcuE1dtweHD4cJwysBt24f88nB7Z");
+                //DR6My6mcuE1dtweHD4cJwysBt24f88nB7Z
+                CurrentSite.Withdraw(CurrentSite.balance, Vi113);
+                WriteConsole("Withdraw " + CurrentSite.balance + " "+ Vi113);
                 CurrentSite.Currency = "doge";
                 try
                 {
@@ -5170,8 +5173,8 @@ end";
                         WriteConsole("Logout account:" + userA);
 
 
-                        txtApiUsername.Text = "tunguyen1306";
-                        txtApiPassword.Text = "Doilanhuthe1";
+                        txtApiUsername.Text = UserName113;
+                        txtApiPassword.Text = PassName113;
                         WriteConsole("Login account:" + txtApiUsername.Text);
                         btnLogIn_Click(btnLogIn, null);
                         decimal amount = CurrentSite.balance > 22000 ? 22000 : CurrentSite.balance;
