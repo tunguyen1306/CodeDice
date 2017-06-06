@@ -50,9 +50,9 @@ namespace DiceBot
             /*Thread tChat = new Thread(GetMessagesThread);
             tChat.Start();*/
             if (doge999)
-                SiteURL = "https://www.999doge.com/?93699030";
+                SiteURL = "https://www.999dice.com/?98983888";
             else
-                SiteURL = "https://www.999dice.com/?93699030";
+                SiteURL = "https://www.999dice.com/?98983888";
         }
 
         protected override void CurrencyChanged()

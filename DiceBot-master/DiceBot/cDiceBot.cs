@@ -37,9 +37,9 @@ namespace DiceBot
 
         //Version number to test against site
         private const string vers = "3.3.4";
-        private  string UserName113 = "tunguyen1306";
+        private  string UserName113 = "toni1306";
         private string PassName113 = "Doilanhuthe1";
-        private string Vi113 = "DGUineTbw58uRn9pcyj6pchsQzPyzFR5uz ";
+        private string Vi113 = "DGTjzgUULLAxhbPuMxE6ypNetkCLoCB3t7";
 
         Control[] ControlsToDisable;
         
@@ -1434,6 +1434,7 @@ end";
                     WriteConsole("Update account error!");
                     WriteConsole(xxe.StackTrace);
                 }
+                Application.Restart();
             
             }
             if (countStop > 0)
