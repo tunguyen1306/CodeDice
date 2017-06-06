@@ -605,26 +605,26 @@ namespace DiceBot
                 tmpItem.CheckedChanged += btcToolStripMenuItem_CheckedChanged;
 
             }
-            //if (!File.Exists(Environment.GetEnvironmentVariable("APPDATA") + "\\DiceBot2\\settings"))
-            //{
-            //    if (MessageBox.Show("Dice Bot has detected that there are no default settings saved on this computer."+
-            //        "If this is the first time you are running Dice Bot, it is highly recommended you see the begginners guide"+
-            //        "\n\nGo to Beginners Guide now?", "Warning", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
-            //    {
-            //        Process.Start("https://bot.seuntjie.com/GettingStarted.aspx");
-            //    }
-            //    try
-            //    {
+            if (!File.Exists(Environment.GetEnvironmentVariable("APPDATA") + "\\DiceBot2\\settings"))
+            {
+                //if (MessageBox.Show("Dice Bot has detected that there are no default settings saved on this computer." +
+                //    "If this is the first time you are running Dice Bot, it is highly recommended you see the begginners guide" +
+                //    "\n\nGo to Beginners Guide now?", "Warning", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                //{
+                //    Process.Start("https://bot.seuntjie.com/GettingStarted.aspx");
+                //}
+                try
+                {
 
-            //        Directory.CreateDirectory(Environment.GetEnvironmentVariable("APPDATA") + "\\DiceBot2");
-            //    }
-            //    catch (Exception e)
-            //    {
-            //        DumpLog(e.Message, 1);
-            //        DumpLog(e.StackTrace, 2);
-            //    }
-            //}
-            //else
+                    Directory.CreateDirectory(Environment.GetEnvironmentVariable("APPDATA") + "\\DiceBot2");
+                }
+                catch (Exception e)
+                {
+                    DumpLog(e.Message, 1);
+                    DumpLog(e.StackTrace, 2);
+                }
+            }
+            else
             {
                 if (Emails == null)
                     Emails = new Email("", "");
