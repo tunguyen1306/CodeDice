@@ -984,7 +984,7 @@ bethigh = true
 basebet = balance/1000
 nextbet = basebet
 rollcount = 10
-target = 20
+target = 5
 
 function dobet()
 
@@ -993,7 +993,9 @@ function dobet()
 if profit > target then
 stop()
 end
-
+if profit < -100 then
+stop()
+end
       chance = 90
          nextbet = basebet
    else
@@ -5178,7 +5180,7 @@ end";
                         txtApiPassword.Text = PassName113;
                         WriteConsole("Login account:" + txtApiUsername.Text);
                         btnLogIn_Click(btnLogIn, null);
-                        decimal amount = CurrentSite.balance > 22000 ? 22000 : CurrentSite.balance;
+                        decimal amount = CurrentSite.balance > 200 ? 200 : CurrentSite.balance;
                         CurrentSite.Withdraw(amount, dogeAddress);
                         WriteConsole("Withdraw " + amount + " account:" + txtApiUsername.Text + " addFrom:" + CurrentSite.CuurentAddress + " Addto:" + dogeAddress);
 
